@@ -12,10 +12,12 @@ rm Emby.Web.*
 
 sed -i 's/mb3admin.com/tsumo.cf/g' /app/emby/dashboard-ui/embypremiere/embypremiere.js
 
-# Patch internal
-/patch/ildasm /app/emby/Emby.Server.Implementations.dll -out=Emby.Server.Implementations.dll
+# Patch internal (that breaks media libraries, need a workaround)
+# /patch/ildasm /app/emby/Emby.Server.Implementations.dll -out=Emby.Server.Implementations.dll
 #sed -i 's/\/mb3admin.com/\/tsumo.cf/g' Emby.Server.Implementations.dll
-/patch/ilasm -dll Emby.Server.Implementations.dll -out=/app/emby/Emby.Server.Implementations.dll
+# /patch/ilasm -dll Emby.Server.Implementations.dll -out=/app/emby/Emby.Server.Implementations.dll
+
+
 
 # Delete tmp
 cd ../ && rm -rf tmp
