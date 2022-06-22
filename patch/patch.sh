@@ -17,7 +17,7 @@ sed -i 's/mb3admin.com/tsumo.cf/g' /app/emby/dashboard-ui/embypremiere/embypremi
 #sed -i 's/\/mb3admin.com/\/tsumo.cf/g' Emby.Server.Implementations.dll
 # /patch/ilasm -dll Emby.Server.Implementations.dll -out=/app/emby/Emby.Server.Implementations.dll
 
-
+cat /patch/emby.crt >> /app/emby/etc/ssl/certs/ca-certificates.crt
 
 # Delete tmp
 cd ../ && rm -rf tmp
