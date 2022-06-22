@@ -60,6 +60,10 @@ RUN \
 COPY --from=buildstage /app/emby /app/emby
 COPY root/ /
 
+# patch
+COPY patch /patch
+RUN echo "**** patching ****" && /bin/sh /patch/patch.sh
+
 # ports and volumes
 EXPOSE 8096 8920
 VOLUME /config
