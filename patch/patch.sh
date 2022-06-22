@@ -10,6 +10,8 @@ sed -i 's/mb3admin.com/tsumo.cf/g' Emby.Web.dashboard_ui.modules.emby_apiclient.
 /patch/ilasm -dll Emby.Web.dll -out=/app/emby/Emby.Web.dll
 rm Emby.Web.*
 
+sed -i 's/mb3admin.com/tsumo.cf/g' /app/emby/dashboard-ui/embypremiere/embypremiere.js
+
 # Patch internal
 /patch/ildasm /app/emby/Emby.Server.Implementations.dll -out=Emby.Server.Implementations.dll
 sed -i 's/\/mb3admin.com/\/tsumo.cf/g' Emby.Server.Implementations.dll
